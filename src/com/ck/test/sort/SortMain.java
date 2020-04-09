@@ -17,13 +17,15 @@ public class SortMain {
         List<ISort> sorts = new ArrayList<>();
         sorts.add(new BubbleSort());
         sorts.add(new InsertSort());
+        sorts.add(new MergeSort());
+        int[] a = generateArray();
         for (int i = 0; i < sorts.size(); i++) {
-            int[] a = generateArray();
+            int[] clone = a.clone();
             long timestamp = System.currentTimeMillis();
-            sorts.get(i).sort(a);
+            sorts.get(i).sort(clone);
             timestamp = System.currentTimeMillis() - timestamp;
-            System.out.println(Arrays.toString(a));
-            check(a);
+            System.out.println(Arrays.toString(clone));
+            check(clone);
             System.out.println(sorts.get(i).getName() + "成功!   耗时: " + timestamp + "ms");
         }
 
@@ -38,10 +40,12 @@ public class SortMain {
     }
 
     private static int[] generateArray() {
+//        int[] a = new int[100];
         int[] a = new int[50000];
         for (int i = 0; i < a.length; i++) {
-            a[i] = (int) (Math.random()*50000);
+            a[i] = (int) (Math.random()*100);
         }
+//        a = new int[]{10, 62, 0, 93, 75};
         return a;
     }
 }
