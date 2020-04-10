@@ -17,7 +17,9 @@ public class SortMain {
         List<ISort> sorts = new ArrayList<>();
         sorts.add(new BubbleSort());
         sorts.add(new InsertSort());
+        sorts.add(new SelectSort());
         sorts.add(new MergeSort());
+        sorts.add(new QuickSort());
         int[] a = generateArray();
         for (int i = 0; i < sorts.size(); i++) {
             int[] clone = a.clone();
@@ -43,9 +45,10 @@ public class SortMain {
 //        int[] a = new int[100];
         int[] a = new int[50000];
         for (int i = 0; i < a.length; i++) {
-            a[i] = (int) (Math.random()*100);
+//            a[i] = (int) (Math.random()*1000);
+            a[i] = i;
         }
-//        a = new int[]{10, 62, 0, 93, 75};
+//        int[] a = new int[]{91, 0, 4, 25, 44, 88, 73, 64, 26, 67, 65, 25, 69, 54, 42};
         return a;
     }
 }
