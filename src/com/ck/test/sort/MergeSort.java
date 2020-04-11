@@ -6,7 +6,7 @@ public class MergeSort implements ISort {
         mergeSort(a, 0, a.length - 1);
     }
 
-    private void mergeSort(int[] a, int start, int end) {
+    void mergeSort(int[] a, int start, int end) {
         if (end <= start) {
             return;
         }

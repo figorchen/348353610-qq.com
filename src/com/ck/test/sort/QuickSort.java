@@ -14,7 +14,7 @@ class QuickSort implements ISort {
         sort(a, 0, a.length - 1);
     }
 
-    private void sort(int[] a, int start, int end) {
+    void sort(int[] a, int start, int end) {
         int partition = partition(a, start, end);
         if (partition == -1) {
 //            System.out.println("start=" + start + "  end=" + end + "   结束");
