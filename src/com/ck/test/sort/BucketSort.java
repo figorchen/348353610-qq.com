@@ -6,7 +6,6 @@ import java.util.List;
 public class BucketSort implements ISort {
     @Override
     public void sort(int[] a) {
-        long timastamp = System.currentTimeMillis();
         if (a.length < 20) {
             new QuickSort().sort(a);
             return;
@@ -50,7 +49,6 @@ public class BucketSort implements ISort {
                 }
             }
         }
-        System.out.println("准备工作耗时 " + (System.currentTimeMillis() - timastamp));
 
         // 把桶内元素按照分桶之后的顺序重新放回数组
         int index = 0;
