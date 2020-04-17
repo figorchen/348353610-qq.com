@@ -15,20 +15,21 @@ import java.util.List;
 public class SortMain {
     public static void main(String[] args) {
         List<ISort> sorts = new ArrayList<>();
-//        sorts.add(new BubbleSort());
-//        sorts.add(new InsertSort());
-//        sorts.add(new SelectSort());
-//        sorts.add(new MergeSort());
-//        sorts.add(new QuickSort());
-//        sorts.add(new BucketSort());
+        sorts.add(new BubbleSort());
+        sorts.add(new InsertSort());
+        sorts.add(new SelectSort());
+        sorts.add(new MergeSort());
+        sorts.add(new QuickSort());
+        sorts.add(new BucketSort());
         sorts.add(new CountSort());
+        sorts.add(new TimSort());
         int[] a = generateArray();
         for (int i = 0; i < sorts.size(); i++) {
             int[] clone = a.clone();
             long timestamp = System.currentTimeMillis();
             sorts.get(i).sort(clone);
             timestamp = System.currentTimeMillis() - timestamp;
-            System.out.println(Arrays.toString(clone));
+//            System.out.println(Arrays.toString(clone));
             check(clone);
             System.out.println(sorts.get(i).getName() + "成功!   耗时: " + timestamp + "ms");
         }
@@ -43,9 +44,9 @@ public class SortMain {
         }
     }
 
-    private static int[] generateArray() {
+    public static int[] generateArray() {
 //        int[] a = new int[100];
-        int[] a = new int[100000000];
+        int[] a = new int[100000];
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random()*100);
 //            a[i] = i%100;
