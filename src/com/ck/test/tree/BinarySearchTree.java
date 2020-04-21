@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 类    名: Tree </br>
+ * 类    名: BinarySearchTree </br>
  * 创建时间: 2020/4/17 </br>
  * 类 描 述: </br>
  * 版   本: 1.0.0 </br>
  *
  * @author : 谌珂 </br>
  */
-class Tree<T extends Comparable<T>> {
+class BinarySearchTree<T extends Comparable<T>> {
     // 根节点
     private Node<T> root;
     // 总层数

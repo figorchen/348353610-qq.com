@@ -10,22 +10,22 @@ package com.ck.test.tree;
  */
 public class TreeMain {
     public static void main(String[] args) {
-        Tree<Integer> tree = new Tree<>();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
 //        Integer[] a = new Integer[]{33, 16, 50, 13, 18, 34, 58, 15,17,25,51,66,19,27,55, };
         Integer[] a = new Integer[]{13,8,18,6,10,16,20,18,19};
         for (Integer integer :
                 a) {
-            tree.insert(integer);
+            binarySearchTree.insert(integer);
         }
-        tree.delete(18);
+        binarySearchTree.delete(18);
 
-        System.out.println("树节点数:" + tree.getSize());
+        System.out.println("树节点数:" + binarySearchTree.getSize());
 
-        System.out.println("树层数: " + tree.getPlies());
+        System.out.println("树层数: " + binarySearchTree.getPlies());
 
-        System.out.println("前序遍历结果: " + tree.preOrder());
-        System.out.println("中序遍历结果: " + tree.inOrder());
-        System.out.println("后序遍历结果: " + tree.postOrder());
+        System.out.println("前序遍历结果: " + binarySearchTree.preOrder());
+        System.out.println("中序遍历结果: " + binarySearchTree.inOrder());
+        System.out.println("后序遍历结果: " + binarySearchTree.postOrder());
 
 
     }
