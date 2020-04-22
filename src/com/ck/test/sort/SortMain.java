@@ -1,5 +1,7 @@
 package com.ck.test.sort;
 
+import com.ck.test.heap.BigTopHeap;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,9 +17,9 @@ import java.util.List;
 public class SortMain {
     public static void main(String[] args) {
         List<ISort> sorts = new ArrayList<>();
-        sorts.add(new BubbleSort());
-        sorts.add(new InsertSort());
-        sorts.add(new SelectSort());
+//        sorts.add(new BubbleSort());
+//        sorts.add(new InsertSort());
+//        sorts.add(new SelectSort());
         sorts.add(new MergeSort());
         sorts.add(new QuickSort());
         sorts.add(new BucketSort());
@@ -34,6 +36,14 @@ public class SortMain {
             System.out.println(sorts.get(i).getName() + "成功!   耗时: " + timestamp + "ms");
         }
 
+        int[] clone = a.clone();
+        BigTopHeap bigTopHeap = new BigTopHeap(null);
+        long timestamp = System.currentTimeMillis();
+        bigTopHeap.sort(clone);
+        timestamp = System.currentTimeMillis() - timestamp;
+//        System.out.println(Arrays.toString(bigTopHeap.getData()));
+        check(bigTopHeap.getData());
+        System.out.println(bigTopHeap.getName() + "成功!   耗时: " + timestamp + "ms");
     }
 
     private static void check(int[] a) {
@@ -51,7 +61,7 @@ public class SortMain {
             a[i] = (int) (Math.random()*100);
 //            a[i] = i%100;
         }
-//        int[] a = new int[]{18, 35, 73, 106, 112, 136, 195, 213, 245, 267, 279, 301, 346, 356, 383, 388, 399, 433, 450, 475, 501, 501, 507, 514, 527, 539, 568, 605, 647, 658, 666, 742, 750, 790, 800, 811, 827, 944, 991, 996};
+//        int[] a = new int[]{35, 23, 35, 38, 59, 60, 60, 84, 87, 92};
         return a;
     }
 }

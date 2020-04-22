@@ -8,7 +8,7 @@ package com.ck.test.sort;
  *
  * @author : 谌珂 </br>
  */
-interface ISort {
+public interface ISort {
     void sort(int[] a);
     String getName();
 }
