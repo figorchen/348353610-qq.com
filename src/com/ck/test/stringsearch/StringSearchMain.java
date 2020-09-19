@@ -51,9 +51,9 @@ public class StringSearchMain {
     }
 
     private static String generateSubString(String mainString) {
-        int length = 5000000;
+        int length = 5000;
 //        int start = ((int) (Math.random()*100)) % (mainString.length() - length + 1);
-        int start = 100000000 - 6000000;
+        int start = 100000000 - 6000;
         return mainString.substring(start, start + length);
 //        return "sbgqotkurearufqfzqtynjejorovnxtqbaxpgohvpepkfumox";
     }
